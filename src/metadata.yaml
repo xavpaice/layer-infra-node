@@ -1,0 +1,17 @@
+name: infra-node
+summary: Charm to add a primary unit to Maas servers that host a Juju model
+maintainer: Xav Paice <xav.paice@canonical.com>
+description: |
+  In order to add subordinate charms such as nrpe, we need to have a primary
+  unit to relate them to.  This charm provides that primary.
+tags:
+  - misc
+subordinate: false
+provides:
+  nrpe-external-master:
+    interface: nrpe-external-master
+    scope: container
+series:
+  - trusty
+  - xenial
+  - bionic

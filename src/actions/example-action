@@ -1,0 +1,6 @@
+#!/usr/local/sbin/charm-env python3
+
+from lib_infra_node import InfranodeHelper
+
+helper = InfranodeHelper()
+helper.action_function()
