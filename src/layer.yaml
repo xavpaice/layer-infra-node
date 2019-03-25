@@ -1,6 +1,7 @@
 includes:
   - 'layer:basic'
   - 'layer:snap'
+  - 'layer:status'
   - 'interface:nrpe-external-master'
 options:
   basic:

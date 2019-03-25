@@ -40,6 +40,15 @@ async def test_infranode_deploy(model, series):
     await model.deploy('{}/builds/infra-node'.format(juju_repository),
                        series=series,
                        application_name='infra-node-{}'.format(series))
+    await model.deploy('cs:nagios',
+                       series=series,
+                       application_name='nagios-{}'.format(series))
+    await model.deploy('cs:nrpe',
+                       series=series,
+                       application_name='nrpe-{}'.format(series),
+                       num_units=0)
+    await model.add_relation('infra-node-{}'.format(series), 'nrpe-{}'.format(series))
+    await model.add_relation('nagios-{}:monitors'.format(series), 'nrpe-{}:monitors'.format(series))
     assert True
 
 
