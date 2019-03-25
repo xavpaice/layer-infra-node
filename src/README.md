@@ -4,12 +4,7 @@ This charm provides a principal Juju unit so that we relate things like nrpe,
 landscape-client, etc., to service the hosts used to provide Maas and other
 infrastructure for a cloud installation.
 
-Additionally, this charm ensures that the snaps for openstackclient and juju
-are installed, since these hosts tend also to be used as administration
-jumphosts.
-
 # Usage
-
 
 First, ensure you have ssh keys exchanged or passwords for a user with sudo on
 the Maas host you wish to add.  You will need to confirm you can ssh from the
@@ -38,3 +33,4 @@ future.
 # Bugs
 
 
+https://bugs.launchpad.net/layer-infra-node
